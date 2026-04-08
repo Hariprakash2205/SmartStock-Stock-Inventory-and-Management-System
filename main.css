@@ -1,0 +1,148 @@
+/* ✅ Import Tailwind base styles */
+@import "tailwindcss/preflight";
+@import "tailwindcss/theme";
+@import "tailwindcss/utilities";
+
+
+/* ✅ Import your base resets (optional custom styles) */
+@import "./base.css";
+
+/* 🌐 App-level Layout */
+html,
+body {
+  @apply bg-gray-50 text-gray-800 font-sans min-h-screen w-full;
+}
+
+/* ✅ Make the main app container full-width and centered */
+#app {
+  @apply w-full min-h-screen mx-auto p-8 lg:p-12 xl:p-16;
+  @apply flex flex-col gap-8;
+
+}
+
+/* ✅ Headings — modern and professional */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold tracking-tight text-gray-800;
+}
+
+h1 {
+  @apply text-3xl sm:text-4xl mb-4;
+}
+
+h2 {
+  @apply text-2xl sm:text-3xl mb-3;
+}
+
+h3 {
+  @apply text-xl sm:text-2xl mb-2;
+}
+
+/* ✅ Links */
+a {
+  @apply text-blue-600 hover:text-blue-700 transition-colors duration-200;
+  text-decoration: none;
+}
+
+/* ✅ Navigation bar styling */
+.navbar {
+  @apply w-full bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50;
+}
+
+.navbar-container {
+  @apply flex justify-between items-center px-6 py-4 max-w-7xl mx-auto;
+}
+
+.navbar a {
+  @apply text-gray-700 font-medium hover:text-blue-600 transition;
+}
+
+/* ✅ Cards (Dashboard / Stock Items / etc.) */
+.card {
+  @apply bg-white rounded-2xl shadow-md p-6 hover:shadow-lg transition-shadow duration-300;
+}
+
+/* ✅ Buttons */
+.btn {
+  @apply inline-flex items-center justify-center rounded-lg font-medium px-4 py-2 transition-all duration-200;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700 active:scale-95;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 text-gray-700 hover:bg-gray-300;
+}
+
+.btn-outline {
+  @apply border border-gray-300 text-gray-600 hover:bg-gray-100;
+}
+
+/* ✅ Gradient button (for special actions) */
+.btn-gradient {
+  @apply bg-linear-to-r from-blue-500 to-indigo-600 text-white font-semibold shadow-md hover:shadow-lg;
+}
+
+/* ✅ Tables — clean modern style */
+.table {
+  @apply w-full border border-gray-200 rounded-xl overflow-hidden bg-white;
+}
+
+.table th {
+  @apply bg-gray-100 text-gray-700 font-semibold text-sm uppercase tracking-wide border-b p-3;
+}
+
+.table td {
+  @apply text-gray-800 border-b p-3;
+}
+
+.table tr:hover {
+  @apply bg-gray-50;
+}
+
+/* ✅ Empty state messages */
+.empty-state {
+  @apply text-gray-500 italic py-12 text-center;
+}
+
+/* ✅ Toastify overrides (optional for consistency) */
+.Toastify__toast {
+  @apply rounded-xl font-medium shadow-md;
+}
+
+.Toastify__toast--success {
+  @apply bg-green-500 text-white;
+}
+
+.Toastify__toast--error {
+  @apply bg-red-500 text-white;
+}
+
+.Toastify__toast--info {
+  @apply bg-blue-500 text-white;
+}
+
+/* ✅ Footer */
+.footer {
+  @apply text-center text-sm text-gray-500 mt-12 border-t pt-6;
+}
+
+/* ✅ Responsive improvements */
+@media (max-width: 768px) {
+  #app {
+    @apply p-4;
+  }
+
+  .navbar-container {
+    @apply px-4;
+  }
+
+  .card {
+    @apply p-4;
+  }
+}
